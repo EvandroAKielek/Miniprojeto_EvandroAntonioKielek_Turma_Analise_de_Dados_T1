@@ -14,3 +14,8 @@ print("Colunas da base:", df.columns.tolist())
 print("\nTipos de dados:")
 print(df.dtypes)
 
+# Remover colunas extras (Unnamed)
+df = df.drop(columns=[c for c in df.columns if "Unnamed" in c])
+
+# Sprint 2 - Transformação de tipos
+df['DATA'] = pd.to_datetime(df['DATA'], errors='coerce')
