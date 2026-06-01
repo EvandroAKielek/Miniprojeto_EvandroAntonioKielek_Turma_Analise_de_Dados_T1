@@ -29,3 +29,16 @@ df = df.drop_duplicates()
 
 print("\nApós limpeza:")
 print(df.isnull().sum())
+
+# Sprint 4 - Estatística descritiva (Número de filhos)
+col = 'CL_FHL'
+
+print("\nEstatísticas da coluna Número de Filhos:")
+print("Média:", df[col].mean())
+print("Mediana:", df[col].median())
+print("Moda:", df[col].mode()[0])
+print("Desvio Padrão:", df[col].std())
+print("Máximo:", df[col].max())
+print("Mínimo:", df[col].min())
+print("Quartis:\n", df[col].quantile([0.25, 0.5, 0.75]))
+print("Contagem:", df[col].count())
