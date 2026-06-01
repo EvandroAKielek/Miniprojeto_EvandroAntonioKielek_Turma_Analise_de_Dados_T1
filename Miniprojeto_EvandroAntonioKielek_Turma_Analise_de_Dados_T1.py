@@ -19,3 +19,13 @@ df = df.drop(columns=[c for c in df.columns if "Unnamed" in c])
 
 # Sprint 2 - Transformação de tipos
 df['DATA'] = pd.to_datetime(df['DATA'], errors='coerce')
+
+# Sprint 3 - Limpeza de nulos e duplicatas
+print("\nValores nulos por coluna:")
+print(df.isnull().sum())
+
+df['PR_CAT'] = df['PR_CAT'].fillna("Sem Categoria")
+df = df.drop_duplicates()
+
+print("\nApós limpeza:")
+print(df.isnull().sum())
