@@ -42,3 +42,14 @@ print("Máximo:", df[col].max())
 print("Mínimo:", df[col].min())
 print("Quartis:\n", df[col].quantile([0.25, 0.5, 0.75]))
 print("Contagem:", df[col].count())
+
+# Sprint 5 - Agrupamentos
+print("\nNúmero de compras por gênero:")
+print(df.groupby('CL_GENERO')['CO_ID'].count())
+
+print("\nNúmero de compras por categoria:")
+print(df.groupby('PR_CAT')['CO_ID'].count())
+
+# Sprint extra - Validação do identificador de compra (CO_ID)
+print("\nVerificação de identificador de compra (CO_ID):")
+print("Duplicados em CO_ID:", df['CO_ID'].duplicated().sum())
